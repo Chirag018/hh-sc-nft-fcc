@@ -10,6 +10,10 @@ import "hardhat/console.sol";
 error ERC721Metadata__URI_QueryFor_NonExistentToken();
 
 contract DynamicSvgNft is ERC721, Ownable {
+    //mint
+    // store our SVG information somewhere
+    // some logic to say "show X image" or "show Y image"
+
     uint256 private s_tokenCounter;
     string private s_lowImageURI;
     string private s_highImageURI;

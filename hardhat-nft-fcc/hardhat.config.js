@@ -1,7 +1,7 @@
 require("@nomiclabs/hardhat-waffle")
 require("@nomiclabs/hardhat-etherscan")
 require("hardhat-deploy")
-require("solidity-coverage")
+// require("solidity-coverage")
 require("hardhat-gas-reporter")
 require("hardhat-contract-sizer")
 require("dotenv").config()
@@ -17,9 +17,7 @@ module.exports = {
   namedAccounts: {
     deployer: {
       default: 0,
-    },
-    player: {
-      default: 1,
+      1: 0,
     },
   },
   networks: {
