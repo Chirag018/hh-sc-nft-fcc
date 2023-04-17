@@ -30,8 +30,9 @@ module.exports = {
     mumbai: {
       url: MUMBAI_RPC_URL,
       accounts: [PRIVATE_KEY],
+      saveDeployments: true,
       chainId: 80001,
-      blockConfirmation: 6,
+      blockConfirmations: 6,
     }
   },
   // etherscan: {
