@@ -63,7 +63,7 @@ const { assert, expect, use } = require("chai");
                 await expect(
                     nftMarketplace.listItem(
                         basicNft.address, TOKEN_ID, PRICE))
-                    .to.be.revertedWith("AlreadyListed");
+                    .to.be.revertedWith(error);
             })
 
             it("exclusively allows owners to list", async () => {
@@ -80,6 +80,13 @@ const { assert, expect, use } = require("chai");
                 const listing = await nftMarketplace.getListing(basicNft.address, TOKEN_ID)
                 assert(listing.price.toString() == PRICE.toString())
                 assert(listing.seller.toString() == deployer.address);
+            })
+        })
+
+        describe("cancelListing",function(){
+            it('reverts if there is no listing',async function(){
+                const error=`NotListed("${basicNft.address}",${TOKEN_ID})`
+                // await expect(nftMarketplace.)
             })
         })
     })
