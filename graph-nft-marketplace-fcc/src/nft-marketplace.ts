@@ -12,6 +12,15 @@ import {
 } from "../generated/schema";
 
 export function handleItemBought(event: ItemBoughtEvent): void {
+  // save that event in our graph
+  // update our activeitems
+
+  // get or create an itemlisted object
+  // each item needs a unique Id
+
+  // ItemBoughtEvent: Just the raw event
+  // ItemBoughtObject: What we save
+
   let itemBought = ItemBought.load(
     getIdFromEventParams(event.params.tokenId, event.params.nftAddress)
   );
