@@ -58,17 +58,23 @@ const { assert, expect, use } = require("chai");
             it("exclusively item that haven't been listed", async function () {
                 await nftMarketplace.listItem(basicNft.address, TOKEN_ID, PRICE)
                 const error = `AlreadyListed("${basicNft.address}",${TOKEN_ID})`
-                console.log(nftMarketplace.listItem(
-                    basicNft.address, TOKEN_ID, PRICE));
+                // const error = 'AlreadyListed'
+                console.log(error);
                 await expect(
                     nftMarketplace.listItem(
                         basicNft.address, TOKEN_ID, PRICE))
                     .to.be.revertedWith(error);
             })
 
+            // it("should revert if price is zero",async ()=>{
+            //     const zero=0;
+            //     await expect(nftMarketplace.listItem(basicNft.address,TOKEN_ID,PRICE)).to.be.revertedWith("PriceMustBeAboveZero")
+            // })
+
             it("exclusively allows owners to list", async function () {
                 nftMarketplace = nftMarketplaceContract.connect(user);
                 await basicNft.approve(user.address, TOKEN_ID);
+                // const dummyAccount = '0x000000000000000000'
                 await expect(nftMarketplace.listItem(basicNft.address, TOKEN_ID, PRICE)).to.be.revertedWith("NotOwner")
             })
             it("needs approval to list item", async function () {
