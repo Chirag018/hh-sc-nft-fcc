@@ -60,7 +60,7 @@ export function handleItemCanceled(event: ItemCanceledEvent): void {
   itemCanceled.nftAddress = event.params.nftAddress;
   itemCanceled.tokenId = event.params.tokenId;
   activeItem!.buyer = Address.fromString(
-    "0x000000000000000000000000000000000000dEaD"
+    "0x000000000000000000000000000000000000dEaD" // dead address, ie. item has been canceled
   );
 
   itemCanceled.save();
