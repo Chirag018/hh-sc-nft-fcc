@@ -61,3 +61,6 @@ type ItemBought @entity {
   tokenId: BigInt!
   price: BigInt
 }
+
+
+//try out different ways to run the query and test the ts file as well
